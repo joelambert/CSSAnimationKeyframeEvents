@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8 />
+		<title>CSS3 Animation Keyframe Events</title>
+		<!--[if lte IE 8]>
+ 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="js/cssanimation.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/cssanimation.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript" charset="utf-8">
+			$(function(){
+				$('#container').click(function(event) {
+					// Use the non-jQuery form
+					// CSSAnimation.trigger($('#animate').get(0), 'boxrotate', 3000);
+					
+					// Use the jQuery Plugin
+					$('#animate').cssanimation('boxrotate', 3000);
+				})
+				
+				$('#animate').bind('cssAnimationKeyframe', function(event){
+					var text = "";
+					
+					switch(event.originalEvent.keyText) {
+						case '0%':
+							text = "down &darr;"; break;
+						case '25%':
+							text = "right &rarr;"; break;
+						case '50%':
+							text = "up &uarr;"; break;
+						case '75%':
+							text = "left &larr;"; break;
+						case '100%':
+							text = "click me"; break;
+					};
+					
+					$('#text').html(text);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<section id="container">
+			<div id="animate"></div>
+			<div id="text">click me</div>
+		</section>
+		<section id="blurb">
+			<h1>Keyframe Events for CSS3 Animations</h1>
+			<p>CSS3 Animations are great but the current implementation doesn't trigger Javascript Events for each Keyframe <em>(<a href="http://blog.joelambert.co.uk/2011/05/17/keyframe-events-for-css3-animations/">see here for more information</a>)</em>.</p>
+			<p>The <code>CSSAnimation</code> object provides the events the browser vendors left out! This allows you to bind event handlers to <code>cssAnimationKeyframe</code> events and perform any additional code that needs to happen at each keyframe.</p>
+		</section>
+		<footer>
+			<p>CSSAnimation.js &copy; Copyright 2011 Joe Lambert. All Rights Reserved. Follow me on Twitter <a href="http://www.twitter.com/joelambert">@joelambert</a></p>
+			<img src="css/img/html5.png" alt="HTML5" width="35px" />
+		</footer>
+	</body>
+</html>

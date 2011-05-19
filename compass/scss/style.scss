@@ -1,0 +1,266 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+@include reset-html5;
+
+@-webkit-keyframes boxrotate {
+	0%
+	{
+		-webkit-transform: translate3d(0, 0, 0);
+		background: #da371e;
+	}
+	
+	25%
+	{
+		-webkit-transform: translate3d(0px, 200px, 0) rotate(90deg);
+		background: #da3ab9;
+	}
+	
+	50%
+	{
+		-webkit-transform: translate3d(200px, 200px, 0) rotate(180deg);
+		background: #34b6da;
+	}
+	
+	75%
+	{
+		-webkit-transform: translate3d(200px, 0, 0) rotate(270deg);
+		background: #88da50;
+	}
+	
+	100%
+	{
+		-webkit-transform: translate3d(0, 0, 0) rotate(360deg);
+		background: #da371e;
+	}
+}
+
+html
+{
+	background: #222;
+	font-family: helvetica, arial, sans-serif;
+	color: #EEE;
+	text-shadow: 0 1px 0 rgba(#000, 0.2);
+}
+
+
+
+em
+{
+	font-style: italic;
+}
+
+code
+{
+	font-family: courier;
+	padding: 0.3em;
+	margin: 0 0.2em;
+	background: rgba(#FFF, 0.1);
+	@include border-radius(3px);
+	@include box-shadow(0px 1px 3px rgba(#000, 0.5));
+}
+
+body
+{
+	
+	header
+	{
+		background: #333;
+		padding: 10px;
+		overflow: auto;
+
+		a
+		{
+			color: #CCC;
+			text-decoration: none;
+		}
+
+		a.name
+		{
+			font-family: 'Pacifico';
+			font-size: 1.1em;
+			margin-right: 1em;
+			position: relative;
+			top: 3px;
+		}
+
+		a.writeup
+		{
+			font-size: 0.8em;
+			border-bottom: 1px dashed #CCC;
+
+			&:after
+			{
+				content: ' \2192';
+			}
+		}
+
+		a.twitter
+		{
+			float: right;
+		}
+
+		div.nav
+		{
+			float: right;
+			font-size: 0.7em;
+			padding: 0.75em;
+			padding-right: 1.5em;
+
+			a
+			{
+				margin-left: 1.5em;
+
+				&:hover
+				{
+					border-bottom: 1px dashed #CCC;
+				}
+			}
+		}
+	}
+	
+	section#container
+	{
+		width: 230px;
+		height: 230px;
+		background: rgba(#FFF, 0.1);
+		margin: 100px auto 50px;
+		padding: 20px;
+		@include box-shadow(0px 1px 6px rgba(#000, 0.5));
+		cursor: pointer;
+		
+		div#animate
+		{
+			width: 30px;
+			height: 30px;
+			background: #da371e;
+			@include border-radius(3px);
+/*			border: 1px solid rgba(#000, 0.2);
+			@include background-clip(padding);*/
+		}
+		
+		div#text
+		{
+			text-align: center;
+			font-size: 3em;
+			margin-top: 1em;
+		}
+	}
+	
+	section#blurb
+	{
+		width: 600px;
+		margin: 0px auto;
+		line-height: 1.6em;
+		
+		a
+		{
+			color: #FFF;
+			text-decoration: none;
+			border-bottom: 1px dashed #CCC;
+		}
+		
+		h1
+		{
+			font-size: 2em;
+			font-weight: bold;
+		}
+		
+		p
+		{
+			margin: 1.6em 0;
+		}
+		
+		h2
+		{
+			font-size: 2em;
+			font-weight: bold;
+			margin-top: 1.3em;
+		}
+		
+		section.code
+		{
+			h3
+			{
+				background: rgba(#FFF, 0.2);
+				@include box-shadow(0px 1px 6px rgba(#000, 0.5));
+				padding: 0.5em 0.8em;
+				
+				span
+				{
+					font-family: times, georgia, serif;
+					font-style: italic;
+					font-size: 1.1em;
+				}
+			}
+			
+			pre
+			{
+				@include box-shadow(0px 1px 6px rgba(#000, 0.5));
+				@include border-radius(0px 0px 3px 3px);
+				padding: 1em;
+				font-family: courier;
+				font-size: 0.8em;
+				background: rgba(#FFF, 0.5);
+				color: #111;
+				text-shadow: 0 1px 0 rgba(#FFF, 0.4);
+				margin-bottom: 3em;
+			}
+		}	
+	}
+	
+	section#details
+	{
+		text-align: center;
+		padding-bottom: 4em;
+
+		a
+		{
+			margin-left: 1em;
+			padding: 1em;
+			background: rgba(#FFF, 0.1);
+			@include border-radius(3px);
+			color: #EEE;
+			text-shadow: 0 1px 0 rgba(#FFF, 0.2);
+			text-decoration: none;
+			border: 1px solid rgba(#FFF, 0.3);
+			font-weight: bold;
+			font-size: 0.8em;
+
+			&:first-child
+			{
+				margin-left: 0;
+			}
+
+			&:hover
+			{
+				background: rgba(#FFF, 0.3);
+				color: #000;
+			}
+		}
+	}
+	
+	footer
+	{
+		font-size: 0.7em;
+		text-align: center;
+		margin-bottom: 3em;
+		margin-top: 5em;
+		
+		img
+		{
+			margin-top: 2em;
+		}
+		
+		a
+		{
+			color: #FFF;
+			text-decoration: none;
+			border-bottom: 1px dashed #CCC;
+		}
+	}
+}

@@ -1,0 +1,330 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../.gem/ruby/1.8/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, ../../../../../.gem/ruby/1.8/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, ../../../../../.gem/ruby/1.8/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../../../../../.gem/ruby/1.8/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, ../../../../../.gem/ruby/1.8/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, ../../../../../.gem/ruby/1.8/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, ../../../../../.gem/ruby/1.8/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, ../../../../../.gem/ruby/1.8/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 115, ../../../../../.gem/ruby/1.8/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 115, ../../../../../.gem/ruby/1.8/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+@-webkit-keyframes boxrotate {
+  /* line 12, ../compass/scss/style.scss */
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    background: #da371e;
+  }
+
+  /* line 18, ../compass/scss/style.scss */
+  25% {
+    -webkit-transform: translate3d(0px, 200px, 0) rotate(90deg);
+    background: #da3ab9;
+  }
+
+  /* line 24, ../compass/scss/style.scss */
+  50% {
+    -webkit-transform: translate3d(200px, 200px, 0) rotate(180deg);
+    background: #34b6da;
+  }
+
+  /* line 30, ../compass/scss/style.scss */
+  75% {
+    -webkit-transform: translate3d(200px, 0, 0) rotate(270deg);
+    background: #88da50;
+  }
+
+  /* line 36, ../compass/scss/style.scss */
+  100% {
+    -webkit-transform: translate3d(0, 0, 0) rotate(360deg);
+    background: #da371e;
+  }
+}
+
+/* line 43, ../compass/scss/style.scss */
+html {
+  background: #222;
+  font-family: helvetica, arial, sans-serif;
+  color: #EEE;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* line 53, ../compass/scss/style.scss */
+em {
+  font-style: italic;
+}
+
+/* line 58, ../compass/scss/style.scss */
+code {
+  font-family: courier;
+  padding: 0.3em;
+  margin: 0 0.2em;
+  background: rgba(255, 255, 255, 0.1);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* line 71, ../compass/scss/style.scss */
+body header {
+  background: #333;
+  padding: 10px;
+  overflow: auto;
+}
+/* line 77, ../compass/scss/style.scss */
+body header a {
+  color: #CCC;
+  text-decoration: none;
+}
+/* line 83, ../compass/scss/style.scss */
+body header a.name {
+  font-family: 'Pacifico';
+  font-size: 1.1em;
+  margin-right: 1em;
+  position: relative;
+  top: 3px;
+}
+/* line 92, ../compass/scss/style.scss */
+body header a.writeup {
+  font-size: 0.8em;
+  border-bottom: 1px dashed #CCC;
+}
+/* line 97, ../compass/scss/style.scss */
+body header a.writeup:after {
+  content: ' \2192';
+}
+/* line 103, ../compass/scss/style.scss */
+body header a.twitter {
+  float: right;
+}
+/* line 108, ../compass/scss/style.scss */
+body header div.nav {
+  float: right;
+  font-size: 0.7em;
+  padding: 0.75em;
+  padding-right: 1.5em;
+}
+/* line 115, ../compass/scss/style.scss */
+body header div.nav a {
+  margin-left: 1.5em;
+}
+/* line 119, ../compass/scss/style.scss */
+body header div.nav a:hover {
+  border-bottom: 1px dashed #CCC;
+}
+/* line 127, ../compass/scss/style.scss */
+body section#container {
+  width: 230px;
+  height: 230px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 100px auto 50px;
+  padding: 20px;
+  -moz-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+/* line 137, ../compass/scss/style.scss */
+body section#container div#animate {
+  width: 30px;
+  height: 30px;
+  background: #da371e;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  /*			border: 1px solid rgba(#000, 0.2);
+  			@include background-clip(padding);*/
+}
+/* line 147, ../compass/scss/style.scss */
+body section#container div#text {
+  text-align: center;
+  font-size: 3em;
+  margin-top: 1em;
+}
+/* line 155, ../compass/scss/style.scss */
+body section#blurb {
+  width: 600px;
+  margin: 0px auto;
+  line-height: 1.6em;
+}
+/* line 161, ../compass/scss/style.scss */
+body section#blurb a {
+  color: #FFF;
+  text-decoration: none;
+  border-bottom: 1px dashed #CCC;
+}
+/* line 168, ../compass/scss/style.scss */
+body section#blurb h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+/* line 174, ../compass/scss/style.scss */
+body section#blurb p {
+  margin: 1.6em 0;
+}
+/* line 179, ../compass/scss/style.scss */
+body section#blurb h2 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 1.3em;
+}
+/* line 188, ../compass/scss/style.scss */
+body section#blurb section.code h3 {
+  background: rgba(255, 255, 255, 0.2);
+  -moz-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+  padding: 0.5em 0.8em;
+}
+/* line 194, ../compass/scss/style.scss */
+body section#blurb section.code h3 span {
+  font-family: times, georgia, serif;
+  font-style: italic;
+  font-size: 1.1em;
+}
+/* line 202, ../compass/scss/style.scss */
+body section#blurb section.code pre {
+  -moz-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+  -moz-border-radius: 0px 0px 3px 3px;
+  -webkit-border-radius: 0px 0px 3px 3px;
+  -o-border-radius: 0px 0px 3px 3px;
+  -ms-border-radius: 0px 0px 3px 3px;
+  -khtml-border-radius: 0px 0px 3px 3px;
+  border-radius: 0px 0px 3px 3px;
+  padding: 1em;
+  font-family: courier;
+  font-size: 0.8em;
+  background: rgba(255, 255, 255, 0.5);
+  color: #111;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  margin-bottom: 3em;
+}
+/* line 217, ../compass/scss/style.scss */
+body section#details {
+  text-align: center;
+  padding-bottom: 4em;
+}
+/* line 222, ../compass/scss/style.scss */
+body section#details a {
+  margin-left: 1em;
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.1);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  color: #EEE;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: bold;
+  font-size: 0.8em;
+}
+/* line 235, ../compass/scss/style.scss */
+body section#details a:first-child {
+  margin-left: 0;
+}
+/* line 240, ../compass/scss/style.scss */
+body section#details a:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: #000;
+}
+/* line 248, ../compass/scss/style.scss */
+body footer {
+  font-size: 0.7em;
+  text-align: center;
+  margin-bottom: 3em;
+  margin-top: 5em;
+}
+/* line 255, ../compass/scss/style.scss */
+body footer img {
+  margin-top: 2em;
+}
+/* line 260, ../compass/scss/style.scss */
+body footer a {
+  color: #FFF;
+  text-decoration: none;
+  border-bottom: 1px dashed #CCC;
+}

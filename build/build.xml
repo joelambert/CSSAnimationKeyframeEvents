@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build>
+	<version>0.1</version>
+	<docroot>../js/</docroot>
+	<output>
+		<file name="cssanimation">
+			<source>src/cssanimation.js</source>
+			<source>src/requestanimationframe.js</source>
+		</file>
+		<file name="cssanimation.jquery">
+			<source>src/cssanimation.jquery.js</source>
+		</file>
+	</output>
+</build>
