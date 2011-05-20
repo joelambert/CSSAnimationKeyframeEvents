@@ -77,6 +77,30 @@ You can then listen for `cssAnimationKeyframe` events the same way you'd listen 
 		$('#text').html(text);
 	});
 	
+# Limitations
+
+Currently events will only be fired for keyframes at 5% increments (e.g. 0%, 5%, 10% etc). So if you have a keyframe at 23%, you won't be notified. This is similar in design to how [jQuery Runloop](http://farukat.es/journal/2011/02/514-new-creation-jquery-runloop-plugin) works.
+
+You can change this if you want but you may begin to miss events! If you really want to change this you can by passing in an option to either the native function or jQuery plugin:
+
+	// Native
+	CSSAnimation.trigger(elem, 'boxrotate', 3000, {
+		base: 1 // Raise events for keyframes at 1% increments
+	});
+	
+	// jQuery
+	elem.cssanimation('boxrotate', 3000, {
+		base: 1 // Raise events for keyframes at 1% increments
+	});
+
+# How does it work?
+
+Using the `requestAnimFrame()` shim by [Paul Irish](http://paulirish.com/2011/requestanimationframe-for-smart-animating/) we can get very accurate callbacks (@60fps), this means that:
+
+> The browser can optimize concurrent animations together into a single reflow and repaint cycle, leading to higher fidelity animation. For example, JS-based animations synchronized with CSS transitions.
+
+This enables us to work out when a keyframe ought to have occured and raise a suitable event.
+	
 # License
 
 CSSAnimation Keyframe Events is Copyright &copy; 2011 [Joe Lambert](http://www.joelambert.co.uk) and is licensed under the terms of the [MIT License](http://www.opensource.org/licenses/mit-license.php).
