@@ -15,11 +15,24 @@
 		<script type="text/javascript" charset="utf-8">
 			$(function(){
 				$('#container').click(function(event) {
-					// Use the non-jQuery form
-					// CSSAnimation.trigger($('#animate').get(0), 'boxrotate', 3000);
+					var pre = "webkit moz o ms",
+						support = false,
+						elem = this;
 					
-					// Use the jQuery Plugin
-					$('#animate').cssanimation('boxrotate', 3000);
+					$(pre.split(" ")).each(function(i, p){
+						support = support || elem.style[p+'AnimationName'] !== undefined;
+					});
+					
+					if(!support)
+						alert("This demo requires a browser that supports CSS3 Animations");
+					else
+					{
+						// Use the non-jQuery form
+						// CSSAnimation.trigger($('#animate').get(0), 'boxrotate', 3000);
+
+						// Use the jQuery Plugin
+						$('#animate').cssanimation('boxrotate', 3000);
+					}
 				})
 				
 				$('#animate').bind('cssAnimationKeyframe', function(event){
