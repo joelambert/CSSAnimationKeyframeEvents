@@ -244,7 +244,12 @@ body section#blurb h2 {
   font-weight: bold;
   margin-top: 1.3em;
 }
-/* line 188, ../compass/scss/style.scss */
+/* line 186, ../compass/scss/style.scss */
+body section#blurb .note {
+  font-size: 0.8em;
+  color: #666 !important;
+}
+/* line 194, ../compass/scss/style.scss */
 body section#blurb section.code h3 {
   background: rgba(255, 255, 255, 0.2);
   -moz-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
@@ -253,13 +258,13 @@ body section#blurb section.code h3 {
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
   padding: 0.5em 0.8em;
 }
-/* line 194, ../compass/scss/style.scss */
+/* line 200, ../compass/scss/style.scss */
 body section#blurb section.code h3 span {
   font-family: times, georgia, serif;
   font-style: italic;
   font-size: 1.1em;
 }
-/* line 202, ../compass/scss/style.scss */
+/* line 208, ../compass/scss/style.scss */
 body section#blurb section.code pre {
   -moz-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
@@ -279,12 +284,12 @@ body section#blurb section.code pre {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
   margin-bottom: 3em;
 }
-/* line 217, ../compass/scss/style.scss */
+/* line 223, ../compass/scss/style.scss */
 body section#details {
   text-align: center;
   padding-bottom: 4em;
 }
-/* line 222, ../compass/scss/style.scss */
+/* line 228, ../compass/scss/style.scss */
 body section#details a {
   margin-left: 1em;
   padding: 1em;
@@ -302,27 +307,27 @@ body section#details a {
   font-weight: bold;
   font-size: 0.8em;
 }
-/* line 235, ../compass/scss/style.scss */
+/* line 241, ../compass/scss/style.scss */
 body section#details a:first-child {
   margin-left: 0;
 }
-/* line 240, ../compass/scss/style.scss */
+/* line 246, ../compass/scss/style.scss */
 body section#details a:hover {
   background: rgba(255, 255, 255, 0.3);
   color: #000;
 }
-/* line 248, ../compass/scss/style.scss */
+/* line 254, ../compass/scss/style.scss */
 body footer {
   font-size: 0.7em;
   text-align: center;
   margin-bottom: 3em;
   margin-top: 5em;
 }
-/* line 255, ../compass/scss/style.scss */
+/* line 261, ../compass/scss/style.scss */
 body footer img {
   margin-top: 2em;
 }
-/* line 260, ../compass/scss/style.scss */
+/* line 266, ../compass/scss/style.scss */
 body footer a {
   color: #FFF;
   text-decoration: none;

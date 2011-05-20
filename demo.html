@@ -52,6 +52,7 @@
 			<h1>Keyframe Events for CSS3 Animations</h1>
 			<p>CSS3 Animations are great but the current implementation doesn't trigger Javascript Events for each Keyframe <em>(<a href="http://blog.joelambert.co.uk/2011/05/17/keyframe-events-for-css3-animations/">see here for more information</a>)</em>.</p>
 			<p>The <code>CSSAnimation</code> object provides the events the browser vendors left out! This allows you to bind event handlers to <code>cssAnimationKeyframe</code> events and perform any additional code that needs to happen at each keyframe.</p>
+			<p class="note">Note: This won't work as well on Mobile Webkit until <code>webkitRequestAnimationFrame()</code> is implemented!</p>
 		</section>
 		<footer>
 			<p>CSSAnimation.js &copy; Copyright 2011 Joe Lambert. All Rights Reserved. Follow me on Twitter <a href="http://www.twitter.com/joelambert">@joelambert</a></p>
