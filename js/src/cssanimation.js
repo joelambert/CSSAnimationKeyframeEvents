@@ -18,7 +18,9 @@ CSSAnimation.find = function(a) {
 	var ss = document.styleSheets;
 	for (var i = ss.length - 1; i >= 0; i--) {
 		var s = ss[i],
-			rs = s.cssRules ? s.cssRules : s.rules;
+			rs = s.cssRules ? s.cssRules : 
+				 s.rules ? s.rules : 
+				 [];
 			
 		for (var j = rs.length - 1; j >= 0; j--) {
 			if (rs[j].type === window.CSSRule.WEBKIT_KEYFRAMES_RULE && rs[j].name == a){
