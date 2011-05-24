@@ -9,13 +9,13 @@
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		
-		<script src="js/cssanimation.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/cssanimation.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/cssanimation.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/cssanimation.jquery.js" type="text/javascript" charset="utf-8"></script>
 		
 		<script type="text/javascript" charset="utf-8">
 			$(function(){
 				$('#container').click(function(event) {
-					var pre = "webkit moz o ms",
+					var pre = "Webkit Moz O ms",
 						support = false,
 						elem = this;
 					
@@ -37,7 +37,6 @@
 				
 				$('#animate').bind('cssAnimationKeyframe', function(event){
 					var text = "";
-					
 					switch(event.originalEvent.keyText) {
 						case '0%':
 							text = "down &darr;"; break;
@@ -48,7 +47,7 @@
 						case '75%':
 							text = "left &larr;"; break;
 						case '100%':
-							text = "click me"; break;
+							text = ""; break;
 					};
 					
 					$('#text').html(text);

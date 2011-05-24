@@ -100,6 +100,14 @@ Using the `requestAnimFrame()` shim by [Paul Irish](http://paulirish.com/2011/re
 > The browser can optimize concurrent animations together into a single reflow and repaint cycle, leading to higher fidelity animation. For example, JS-based animations synchronized with CSS transitions.
 
 This enables us to work out when a keyframe ought to have occured and raise a suitable event.
+
+# Contributing
+
+Contribution is welcomed but to make it easier to accept a pull request here are some guidelines:
+
+- 	Please make all changes into the source files found under `js/src`. You can then use the build tool (PHP script found at `./build/build`) to create the concatenated and minified files.
+
+- 	Please [camelCase](http://en.wikipedia.org/wiki/CamelCase) your variables, especially if they are used in the options object.
 	
 # License
 
