@@ -1,5 +1,5 @@
 /**
- * @preserve CSSAnimation v0.1
+ * @preserve CSSAnimation v0.2a
  * Provides 'cssAnimationKeyframe' events for keyframe animations.
  * http://www.joelambert.co.uk/cssa
  *
@@ -9,7 +9,7 @@
  */
 
 var CSSAnimation = {
-	version: '0.1'
+	version: '0.2a'
 };
 
 // Locate a WebKitCSSKeyframesRule
