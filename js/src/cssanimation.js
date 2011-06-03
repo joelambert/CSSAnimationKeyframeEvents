@@ -41,9 +41,10 @@ CSSAnimation.find = function(a) {
  */
 
 CSSAnimation.trigger = function(elem, animationName, duration, opts) {
-	var keyframes = {}, loggedKeyframes = {}, animation = null, element = elem, start = 0, options = {
+	var keyframes = {}, loggedKeyframes = {}, animation = null, element = elem, start = 0,  cycle = 0, options = {
 		base: 5,
-		easing: 'linear'
+		easing: 'linear',
+		iterationCount: 1		
 	};
 	
 	// Enable option setting
@@ -94,16 +95,19 @@ CSSAnimation.trigger = function(elem, animationName, duration, opts) {
 	// Trigger the animation
 	element.style.webkitAnimationDuration = duration+'ms';
 	element.style.webkitAnimationTimingFunction = options.easing;
+  element.style.webkitAnimationIterationCount = options.iterationCount;	
 	element.style.webkitAnimationName = animationName;
 	element.isPlaying = true;
+
 	
 	// Use a runloop to workout when callbacks should occur
 	(function runloop(){
 		current 	= new Date().getTime(); // Get the current timestamp
-		percent 	= Math.floor(((current - start) / duration) * 100); // Work out the percentage of the way through the animation
+		percent 	= Math.floor(((current - (start + cycle * duration)) / duration) * 100); // Work out the percentage of the way through the animation
 		key 		= (percent - (percent % options.base))+'%'; // Round the percentage
 		keyframe 	= keyframes[key];	// Check if a keyframe exists
 			
+
 		if(keyframe && !loggedKeyframes[key])
 		{
 			loggedKeyframes[key] = true;
@@ -116,13 +120,21 @@ CSSAnimation.trigger = function(elem, animationName, duration, opts) {
 		{
 			if(!loggedKeyframes['100%'])
 				raiseEvent('100%', (current-start)/1000);
+
+      // Trigger the animation again if its repeating
+		  cycle++;
+		  if(cycle < options.iterationCount || options.iterationCount == 'infinite') {   
+		    loggedKeyframes = {};
+		    requestAnimFrame(runloop, element);
+		  } else {
+  			// Reset the styling so it can be triggered again	
+  			element.style.webkitAnimationDuration = null;
+  			element.style.webkitAnimationTimingFunction = null;
+  			element.style.webkitAnimationName = null;
+  			element.style.webkitAnimationIterationCount = 0;
+  			element.isPlaying = false;		    
+		  }
 			
-			// Reset the styling so it can be triggered again	
-			element.style.webkitAnimationDuration = null;
-			element.style.webkitAnimationTimingFunction = null;
-			element.style.webkitAnimationName = null;
-			
-			element.isPlaying = false;
 		}
 	})();
 };
