@@ -87,6 +87,7 @@ CSSAnimation.trigger = function(elem, animationName, duration, opts) {
 		raiseEvent = function(keyText, elapsedTime) {
 			var event = document.createEvent("Event");
 			event.initEvent("cssAnimationKeyframe");
+			event.animationName = animationName;
 			event.keyText = keyText;
 			event.elapsedTime = elapsedTime;
 			element.dispatchEvent(event);
@@ -95,7 +96,7 @@ CSSAnimation.trigger = function(elem, animationName, duration, opts) {
 	// Trigger the animation
 	element.style.webkitAnimationDuration = duration+'ms';
 	element.style.webkitAnimationTimingFunction = options.easing;
-  element.style.webkitAnimationIterationCount = options.iterationCount;	
+	element.style.webkitAnimationIterationCount = options.iterationCount;	
 	element.style.webkitAnimationName = animationName;
 	element.isPlaying = true;
 
