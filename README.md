@@ -7,16 +7,17 @@ The CSSAnimation object provides the events the browser vendors left out! This a
 
 ## Tested Under
 - Safari 5
-- Chrome (Canary/Dev Builds)
+- Chrome 12
+- Firefox 5
 
 ## May/should also work for
 - iOS (see above caveat about Mobile WebKit)
 
 # Requirements
-A browser capable of rendering CSS3 Animations (currently just Safari/Chrome).
+A browser capable of rendering CSS3 Animations.
 
 # Usage
-Create the CSS animation keyframes in CSS as you would normally:
+Create the CSS animation keyframes in CSS as you would normally, for example with Safari/Chrome:
 
 	@-webkit-keyframes boxrotate {
 	  0% {
