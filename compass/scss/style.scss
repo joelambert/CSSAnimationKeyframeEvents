@@ -39,6 +39,38 @@
 	}
 }
 
+@-moz-keyframes boxrotate {
+	0%
+	{
+		-moz-transform: translate(0, 0);
+		background: #da371e;
+	}
+	
+	25%
+	{
+		-moz-transform: translate(0px, 200px) rotate(90deg);
+		background: #da3ab9;
+	}
+	
+	50%
+	{
+		-moz-transform: translate(200px, 200px) rotate(180deg);
+		background: #34b6da;
+	}
+	
+	75%
+	{
+		-moz-transform: translate(200px, 0) rotate(270deg);
+		background: #88da50;
+	}
+	
+	100%
+	{
+		-moz-transform: translate(0, 0) rotate(360deg);
+		background: #da371e;
+	}
+}
+
 html
 {
 	background: #222;
@@ -268,5 +300,17 @@ body
 			text-decoration: none;
 			border-bottom: 1px dashed #CCC;
 		}
+	}
+}
+
+div#carbonads-container
+{
+	div.carbonad
+	{
+		background: #353535;
+		margin: 2em auto 3em;
+		border: 1px solid rgba(#FFF, 0.1);
+		@include border-radius(3px);
+		text-align: left;
 	}
 }

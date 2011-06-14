@@ -17,16 +17,19 @@ var CSSAnimation = {
 CSSAnimation.find = function(a) {
 	var ss = document.styleSheets;
 	for (var i = ss.length - 1; i >= 0; i--) {
-		var s = ss[i],
-			rs = s.cssRules ? s.cssRules : 
-				 s.rules ? s.rules : 
-				 [];
-			
-		for (var j = rs.length - 1; j >= 0; j--) {
-			if (rs[j].type === window.CSSRule.WEBKIT_KEYFRAMES_RULE && rs[j].name == a){
-				return rs[j];
+		try {
+			var s = ss[i],
+				rs = s.cssRules ? s.cssRules : 
+					 s.rules ? s.rules : 
+					 [];
+
+			for (var j = rs.length - 1; j >= 0; j--) {
+				if ((rs[j].type === window.CSSRule.WEBKIT_KEYFRAMES_RULE || rs[j].type === window.CSSRule.MOZ_KEYFRAMES_RULE) && rs[j].name == a){
+					return rs[j];
+				}
 			}
 		}
+		catch(e) { /* Trying to interrogate a stylesheet from another domain will throw a security error */ }
 	}
 	return null;
 };
@@ -45,7 +48,8 @@ CSSAnimation.trigger = function(elem, animationName, duration, opts) {
 		base: 5,
 		easing: 'linear',
 		iterationCount: 1		
-	};
+	},
+	prefixes = ['Webkit', 'Moz'];
 	
 	// Enable option setting
 	for(var k in opts)
@@ -86,18 +90,40 @@ CSSAnimation.trigger = function(elem, animationName, duration, opts) {
 	var current = percentage = roundedKey = keyframe = null,
 		raiseEvent = function(keyText, elapsedTime) {
 			var event = document.createEvent("Event");
-			event.initEvent("cssAnimationKeyframe");
+			event.initEvent("cssAnimationKeyframe", true, true);
 			event.animationName = animationName;
 			event.keyText = keyText;
 			event.elapsedTime = elapsedTime;
 			element.dispatchEvent(event);
-		};
+		},
+		
+	i=0,
+	found=false,
+	
+	applyCSSAnimation = function(anim) {
+		found = false;
+		for(i=0; i<prefixes.length && !found; i++)
+		{
+			if(element.style[prefixes[i]+'AnimationName'] !== undefined)
+			{
+				element.style[prefixes[i]+'AnimationDuration'] 			= anim.duration;
+				element.style[prefixes[i]+'AnimationTimingFunction'] 	= anim.timingFunction;
+				element.style[prefixes[i]+'AnimationIterationCount'] 	= anim.iterationCount;	
+				element.style[prefixes[i]+'AnimationName'] 				= anim.name;
+
+				found = true;
+			}
+		}
+	};
 	
 	// Trigger the animation
-	element.style.webkitAnimationDuration = duration+'ms';
-	element.style.webkitAnimationTimingFunction = options.easing;
-	element.style.webkitAnimationIterationCount = options.iterationCount;	
-	element.style.webkitAnimationName = animationName;
+	applyCSSAnimation({
+		name: 				animationName,
+		duration: 			duration+'ms',
+		timingFunction: 	options.easing,
+		iterationCount: 	options.iterationCount
+	});
+	
 	element.isPlaying = true;
 
 	
@@ -122,19 +148,25 @@ CSSAnimation.trigger = function(elem, animationName, duration, opts) {
 			if(!loggedKeyframes['100%'])
 				raiseEvent('100%', (current-start)/1000);
 
-      // Trigger the animation again if its repeating
-		  cycle++;
-		  if(cycle < options.iterationCount || options.iterationCount == 'infinite') {   
-		    loggedKeyframes = {};
-		    requestAnimFrame(runloop, element);
-		  } else {
-  			// Reset the styling so it can be triggered again	
-  			element.style.webkitAnimationDuration = null;
-  			element.style.webkitAnimationTimingFunction = null;
-  			element.style.webkitAnimationName = null;
-  			element.style.webkitAnimationIterationCount = 0;
-  			element.isPlaying = false;		    
-		  }
+			// Trigger the animation again if its repeating
+			cycle++;
+			if(cycle < options.iterationCount || options.iterationCount == 'infinite')
+			{   
+			    loggedKeyframes = {};
+			    requestAnimFrame(runloop, element);
+			}
+			else
+			{
+	  			// Reset the styling so it can be triggered again	
+				applyCSSAnimation({
+					name: 				null,
+					duration: 			null,
+					timingFunction: 	null,
+					iterationCount: 	0
+				});
+
+	  			element.isPlaying = false;		    
+			}
 			
 		}
 	})();

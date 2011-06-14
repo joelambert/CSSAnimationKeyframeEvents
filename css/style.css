@@ -106,7 +106,39 @@ footer, header, hgroup, menu, nav, section {
   }
 }
 
-/* line 43, ../compass/scss/style.scss */
+@-moz-keyframes boxrotate {
+  /* line 44, ../compass/scss/style.scss */
+  0% {
+    -moz-transform: translate(0, 0);
+    background: #da371e;
+  }
+
+  /* line 50, ../compass/scss/style.scss */
+  25% {
+    -moz-transform: translate(0px, 200px) rotate(90deg);
+    background: #da3ab9;
+  }
+
+  /* line 56, ../compass/scss/style.scss */
+  50% {
+    -moz-transform: translate(200px, 200px) rotate(180deg);
+    background: #34b6da;
+  }
+
+  /* line 62, ../compass/scss/style.scss */
+  75% {
+    -moz-transform: translate(200px, 0) rotate(270deg);
+    background: #88da50;
+  }
+
+  /* line 68, ../compass/scss/style.scss */
+  100% {
+    -moz-transform: translate(0, 0) rotate(360deg);
+    background: #da371e;
+  }
+}
+
+/* line 75, ../compass/scss/style.scss */
 html {
   background: #222;
   font-family: helvetica, arial, sans-serif;
@@ -114,12 +146,12 @@ html {
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* line 53, ../compass/scss/style.scss */
+/* line 85, ../compass/scss/style.scss */
 em {
   font-style: italic;
 }
 
-/* line 58, ../compass/scss/style.scss */
+/* line 90, ../compass/scss/style.scss */
 code {
   font-family: courier;
   padding: 0.3em;
@@ -137,18 +169,18 @@ code {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* line 71, ../compass/scss/style.scss */
+/* line 103, ../compass/scss/style.scss */
 body header {
   background: #333;
   padding: 10px;
   overflow: auto;
 }
-/* line 77, ../compass/scss/style.scss */
+/* line 109, ../compass/scss/style.scss */
 body header a {
   color: #CCC;
   text-decoration: none;
 }
-/* line 83, ../compass/scss/style.scss */
+/* line 115, ../compass/scss/style.scss */
 body header a.name {
   font-family: 'Pacifico';
   font-size: 1.1em;
@@ -156,35 +188,35 @@ body header a.name {
   position: relative;
   top: 3px;
 }
-/* line 92, ../compass/scss/style.scss */
+/* line 124, ../compass/scss/style.scss */
 body header a.writeup {
   font-size: 0.8em;
   border-bottom: 1px dashed #CCC;
 }
-/* line 97, ../compass/scss/style.scss */
+/* line 129, ../compass/scss/style.scss */
 body header a.writeup:after {
   content: ' \2192';
 }
-/* line 103, ../compass/scss/style.scss */
+/* line 135, ../compass/scss/style.scss */
 body header a.twitter {
   float: right;
 }
-/* line 108, ../compass/scss/style.scss */
+/* line 140, ../compass/scss/style.scss */
 body header div.nav {
   float: right;
   font-size: 0.7em;
   padding: 0.75em;
   padding-right: 1.5em;
 }
-/* line 115, ../compass/scss/style.scss */
+/* line 147, ../compass/scss/style.scss */
 body header div.nav a {
   margin-left: 1.5em;
 }
-/* line 119, ../compass/scss/style.scss */
+/* line 151, ../compass/scss/style.scss */
 body header div.nav a:hover {
   border-bottom: 1px dashed #CCC;
 }
-/* line 127, ../compass/scss/style.scss */
+/* line 159, ../compass/scss/style.scss */
 body section#container {
   width: 230px;
   height: 230px;
@@ -197,7 +229,7 @@ body section#container {
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
-/* line 137, ../compass/scss/style.scss */
+/* line 169, ../compass/scss/style.scss */
 body section#container div#animate {
   width: 30px;
   height: 30px;
@@ -211,45 +243,45 @@ body section#container div#animate {
   /*			border: 1px solid rgba(#000, 0.2);
   			@include background-clip(padding);*/
 }
-/* line 147, ../compass/scss/style.scss */
+/* line 179, ../compass/scss/style.scss */
 body section#container div#text {
   text-align: center;
   font-size: 3em;
   margin-top: 1em;
 }
-/* line 155, ../compass/scss/style.scss */
+/* line 187, ../compass/scss/style.scss */
 body section#blurb {
   width: 600px;
   margin: 0px auto;
   line-height: 1.6em;
 }
-/* line 161, ../compass/scss/style.scss */
+/* line 193, ../compass/scss/style.scss */
 body section#blurb a {
   color: #FFF;
   text-decoration: none;
   border-bottom: 1px dashed #CCC;
 }
-/* line 168, ../compass/scss/style.scss */
+/* line 200, ../compass/scss/style.scss */
 body section#blurb h1 {
   font-size: 2em;
   font-weight: bold;
 }
-/* line 174, ../compass/scss/style.scss */
+/* line 206, ../compass/scss/style.scss */
 body section#blurb p {
   margin: 1.6em 0;
 }
-/* line 179, ../compass/scss/style.scss */
+/* line 211, ../compass/scss/style.scss */
 body section#blurb h2 {
   font-size: 2em;
   font-weight: bold;
   margin-top: 1.3em;
 }
-/* line 186, ../compass/scss/style.scss */
+/* line 218, ../compass/scss/style.scss */
 body section#blurb .note {
   font-size: 0.8em;
   color: #666 !important;
 }
-/* line 194, ../compass/scss/style.scss */
+/* line 226, ../compass/scss/style.scss */
 body section#blurb section.code h3 {
   background: rgba(255, 255, 255, 0.2);
   -moz-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
@@ -258,13 +290,13 @@ body section#blurb section.code h3 {
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
   padding: 0.5em 0.8em;
 }
-/* line 200, ../compass/scss/style.scss */
+/* line 232, ../compass/scss/style.scss */
 body section#blurb section.code h3 span {
   font-family: times, georgia, serif;
   font-style: italic;
   font-size: 1.1em;
 }
-/* line 208, ../compass/scss/style.scss */
+/* line 240, ../compass/scss/style.scss */
 body section#blurb section.code pre {
   -moz-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
@@ -284,12 +316,12 @@ body section#blurb section.code pre {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
   margin-bottom: 3em;
 }
-/* line 223, ../compass/scss/style.scss */
+/* line 255, ../compass/scss/style.scss */
 body section#details {
   text-align: center;
   padding-bottom: 4em;
 }
-/* line 228, ../compass/scss/style.scss */
+/* line 260, ../compass/scss/style.scss */
 body section#details a {
   margin-left: 1em;
   padding: 1em;
@@ -307,29 +339,43 @@ body section#details a {
   font-weight: bold;
   font-size: 0.8em;
 }
-/* line 241, ../compass/scss/style.scss */
+/* line 273, ../compass/scss/style.scss */
 body section#details a:first-child {
   margin-left: 0;
 }
-/* line 246, ../compass/scss/style.scss */
+/* line 278, ../compass/scss/style.scss */
 body section#details a:hover {
   background: rgba(255, 255, 255, 0.3);
   color: #000;
 }
-/* line 254, ../compass/scss/style.scss */
+/* line 286, ../compass/scss/style.scss */
 body footer {
   font-size: 0.7em;
   text-align: center;
   margin-bottom: 3em;
   margin-top: 5em;
 }
-/* line 261, ../compass/scss/style.scss */
+/* line 293, ../compass/scss/style.scss */
 body footer img {
   margin-top: 2em;
 }
-/* line 266, ../compass/scss/style.scss */
+/* line 298, ../compass/scss/style.scss */
 body footer a {
   color: #FFF;
   text-decoration: none;
   border-bottom: 1px dashed #CCC;
+}
+
+/* line 309, ../compass/scss/style.scss */
+div#carbonads-container div.carbonad {
+  background: #353535;
+  margin: 2em auto 3em;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  text-align: left;
 }
